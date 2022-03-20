@@ -1,0 +1,105 @@
+
+
+body {
+    background-image: url("https://d1v7jayx2s9clc.cloudfront.net/user/pages/image-objects/io-6.png");
+    background-size: cover;
+
+    height:  100vh;
+    padding:  0;
+    margin:  0;
+
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border:  10px;
+    border-color: #dddfe0;
+    border-style: ridge;
+}
+
+
+h1 {
+ text-align: center;
+  font-size: 80px;
+  color:  lightpink;
+  font-family: cursive;
+   position: absolute;
+  top: 88px; 
+  left: 800px;	
+}
+
+h2 {
+    font-size:  60px;
+    text-align: center;
+    color: white;
+    text-shadow: 3px 2px black;
+    margin-top: 20px;
+    }
+
+
+
+h6 {
+    background-color: ghostwhite;
+    width: 700px;
+    border: 10px ;
+    opacity: 1;
+    padding: 10px;
+    margin: 50px;
+    border-style: ridge;
+    text-align: center;
+    font-size: 20px;
+    vertical-align: middle;
+    opacity: 100%;
+    }
+
+.center {
+    margin: auto;
+    width: 50%;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    }
+ .blue {
+    border-color: #5a6cc4;
+    }
+
+.lightblue {
+    border-color: #80c5e0;
+    }
+
+.yellow {
+    border-color: #dbe071;
+}
+
+.purple {
+    border-color: #caa1d1;
+}
+
+
+.topleft {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    font-size: 18px;
+    }
+
+.topright {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    font-size: 18px;
+    }
+
+.rightimage {
+	position: absolute;
+    top: 300px;
+    left: 100px;
+}
+
+.leftimage {
+	position: absolute;
+    top: 300px;
+    left: 600px;
+}
+
