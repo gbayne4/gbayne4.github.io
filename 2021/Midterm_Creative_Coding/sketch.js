@@ -1,3 +1,6 @@
+//see on browser:
+// https://gbayne4.github.io/2021/Midterm_Creative_Coding/index.html
+
 let frog, eyes, mouth, bug, bug2, bug3, bug4,bug5, bug6, backgroundChange, hypnotized;
 let x;
 let counter;
@@ -5,8 +8,6 @@ let left = 900;
 let updown;
 let dis = 255;
 let r = 84, b = 174, g = 102;
-let startColor = 255;
-let speedAnimate = 1;
 let o = 0;
 let on = false, frogColor = false;
 
@@ -15,7 +16,7 @@ let xspot = 250, otherxspot = 545;
 
 let yspot = 100, otheryspot = 100;
 let scalar = 1.0;
-let speed = .01;
+let speed = .03;
 let col = {r: 0, g: 0, b: 0};
 
 let w = 0;
@@ -75,17 +76,25 @@ beginBug = false;
   setTimeout(function () { mouth.tongueDown();}, 32050)
   setTimeout(function () { mouth.tongueUp(); dis=0;}, 32100)
 
+
   setTimeout(function () { mouth.tongueDown();}, 38050)
   setTimeout(function () { mouth.tongueUp(); dis=0;}, 38100)
+
 
   setTimeout(function () { mouth.tongueDown();}, 42050)
   setTimeout(function () { mouth.tongueUp(); dis=0;}, 42100)
 
   setTimeout(function () { mouth.tongueDown();}, 52050)
   setTimeout(function () { mouth.tongueUp(); dis=0;}, 52100)
+  setTimeout(function () { eyes.closed();}, 63000)
+  setTimeout(function () { eyes.open();}, 63100)
+  setTimeout(function () { eyes.closed();}, 63200)
+  setTimeout(function () { eyes.open();}, 63300)
 
     setTimeout(function () { mouth.tongueDown();}, 62050)
   setTimeout(function () { mouth.tongueUp(); dis=0;}, 62100)
+
+
   //bug eaten
 }
 
@@ -210,7 +219,7 @@ if (frogColor == true){
       updown5 = updown5 + 20
     }
 
-    if (left5 < - 250 ){
+    if (left5 < - 400 ){
 left1 = width;
  left2 = width;
  left3 = width -150;
@@ -257,7 +266,7 @@ if (angle > 50){
   helperb = true;
 }
   if (helperb == true){
-  speed += .01;
+  speed += .08;
   angle -= speed;
   scalar -= speed;
   frogColor = true;
@@ -287,7 +296,7 @@ if (angle > 50){
   helperb = true;
 }
   if (helperb == true){
-  speed += .01;
+  speed += .08;
   angle -= speed;
   scalar -= speed;
   helper == false
@@ -295,12 +304,10 @@ if (angle > 50){
   if (angle == 2.0){
     helper = true;
     helperb = false;
-    angle =0
-    scalar =0
+    angle = 0
+    scalar  =0
     
     
   }
 
 } //want to figure out a way not to hard code - my many attempt at classing this failed
-
-
