@@ -1,14 +1,10 @@
-function setup() {
-  createCanvas(800, 800);
-  background(114,53,53);
-  fill(100,13,13)
-  rect(0, height/2, 800,400)
-  
-}
+  class Frog{
 
-function draw() {
-  
-  fill(84,174,102);
+  display(r,b,g){
+
+  fill(r,b,g);
+  strokeWeight(1);
+  stroke(0);
   
   beginShape();
   //left hand
@@ -90,18 +86,6 @@ function draw() {
   endShape();
 
 
-    //eyess
-  ellipseMode(CENTER);
-  fill(255);
-  ellipse(247,95,100,100);
-  
-  fill(255);
-  ellipse(543,95,100,100);
-  
-  
-  if (mouseIsPressed === true) {
-  print("X: " + mouseX)
-  print("Y: " + mouseY)
-  }
-  
+}
+
 }
