@@ -161,3 +161,21 @@ h1:hover {
 	opacity: 1;
 }
 
+h2 {
+	position: relative;
+	transition: opacity: 0.25s;
+ text-align: center;
+  font-size: 50px;
+  color:  red;
+  font-family: Sans-serif ;
+  margin: auto;
+  width: 50%;
+  opacity:  .25;
+  transition: opacity: 5s;
+ 
+}
+
+h2:hover {
+	opacity: 1;
+}
+
