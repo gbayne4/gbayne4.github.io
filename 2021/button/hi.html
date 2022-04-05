@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Toggle buttons</title>
+    <style>
+      .button-focus {
+        background-color: #2ce98e;
+        color: #131621;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="btn btn-one">Button one</button>
+    <button class="btn btn-two">Button two</button>
+  </body>
+  <script>
+    //   get all the elements on the basis of their class name
+    let btn = document.getElementsByClassName("btn");
+
+    for (var i = 0; i < btn.length; i++) {
+      (function (index) {
+        btn[index].addEventListener("click", function () {
+          console.log("Clicked Button: " + index);
+
+          let isPresent = false;
+
+          //   Check if the class is present or not
+          this.classList.forEach(function (e, i) {
+            if (e == "button-focus") {
+              isPresent = true;
+            } else {
+              isPresent = false;
+            }
+          });
+
+          //   toggle the presence of class on the basis of the isPresent variable
+          if (isPresent) {
+            this.classList.remove("button-focus");
+          } else {
+            this.classList.add("button-focus");
+          }
+        });
+      })(i);
+    }
+  </script>
+</html>
