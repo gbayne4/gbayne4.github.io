@@ -1,0 +1,342 @@
+
+.creepyWords{
+    font-family: myFirstFont;
+    src: url(a Theme for murder.ttf);
+
+animation: flashy 10s infinite alternate;
+text-shadow: 0 0 50px darkred;
+color: darkred;
+font: 110px Trattatello, fantasy;
+
+}
+
+#mid{
+  position: fixed; 
+top: 30%;
+left: 27%;
+}
+
+#up{
+    position: fixed; 
+top: -2%;
+left: 40%;
+
+}
+
+@keyframes flashy {
+  0% {
+    opacity:1;
+  }
+  20% {
+    opacity:1;
+  }
+  21%{
+    opacity: 0;
+  }
+  22%{
+    opacity: 1;
+  }
+  23%{
+    opacity: 0;
+  }
+  24%{
+    opacity: 1;
+  }
+  25%{
+    opacity: 0;
+  }
+  26%{
+    opacity: 1;
+  }
+  70% {
+    opacity:1;
+  }
+  70.5%{
+    opacity: 0;
+  }
+  71%{
+    opacity: 1;
+  }
+  71.5%{
+    opacity: 0;
+  }
+  72%{
+    opacity: 1;
+  }
+  73.5%{
+    opacity: 0;
+  }
+  74%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 1;
+  }
+
+}
+
+
+#postitnote {
+  width: 300px;
+  text-shadow: 0 0 50px black;
+  z-index: -1;
+}
+
+#text{
+font: 30px Bradley Hand, cursive;
+color: black;
+text-align: center;
+}
+
+.concept {
+position: fixed; 
+top: 55%;
+left: 5%;
+
+}
+
+.conceptT {
+position: fixed; 
+top: 64%;
+left: 9%;
+
+}
+
+.wireframe{
+position: fixed; 
+top: 5%;
+left: 5%;
+}
+
+.wireframeT{
+position: fixed; 
+top: 13%;
+left: 7%;
+}
+
+.siteMap{
+  position: fixed; 
+top: 55%;
+left: 75%;
+
+}
+.siteMapT{
+  position: fixed; 
+top: 65%;
+left: 80%;
+
+}
+
+.functions{
+  position: fixed; 
+top: 5%;
+left: 75%;
+
+}
+
+.functionsT{
+  position: fixed; 
+top: 7%;
+left: 80%;
+
+}
+
+
+.footprint1{
+  position: fixed; 
+  top: 60%;
+  left: 45%;
+  width: 200px;
+  opacity: 0;
+}
+#left1{
+animation: print 5s ease-in forwards infinite alternate;
+}
+#right1{
+animation: print 5s ease-in forwards infinite alternate .5s;
+}
+
+
+.footprint2{
+  position: fixed; 
+  top: 40%;
+  left: 45%;
+  width: 170px;
+  opacity: 0;
+}
+
+#left2{
+animation: print 5s ease-in forwards infinite alternate 1s;
+}
+#right2{
+animation: print 5s ease-in forwards infinite alternate 1.5s;
+opacity: 0;
+}
+
+.footprint3{
+  position: fixed; 
+  top: 25%;
+  left: 45%;
+  width: 150px;
+  opacity: 0;
+}
+
+#left3{
+animation: print 5s ease-in forwards infinite alternate 2s;
+}
+#right3{
+animation: print 5s ease-in forwards infinite alternate 2.5s;
+opacity: 0;
+}
+
+.footprint4{
+  position: fixed; 
+  top: 15%;
+  left: 45%;
+  width: 100px;
+  opacity: 0;
+}
+
+#left4{
+animation: print 5s ease-in forwards infinite alternate 3s;
+}
+#right4{
+animation: print 5s ease-in forwards infinite alternate 3.5s;
+opacity: 0;
+}
+
+.footprint5{
+  position: fixed; 
+  top: 10%;
+  left: 45%;
+  width: 60px;
+  opacity: 0;
+}
+
+#left5{
+animation: print 5s ease-in forwards infinite alternate 4s;
+}
+#right5{
+animation: print 5s ease-in forwards infinite alternate 4.5s;
+opacity: 0;
+}
+
+
+@keyframes print {
+  0% {
+    opacity:1;
+  }
+  10%{
+    opacity: 1;
+  }
+  20%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 0;
+  }}
+
+.wireframe {
+  width:  400px;
+  }
+#wireframe1{
+  position: absolute;
+  top: 20px;
+  left: 40px;
+}
+#wireframe2{
+  position: absolute;
+  top: 20px;
+  left: 430px;
+  
+}
+#wireframe3{
+  position: absolute;
+  top: 20px;
+  left: 840px;
+  
+}
+#wireframe4{
+  position: absolute;
+  top: 400px;
+  left: 40px;
+  
+  
+}
+#wireframe5{
+    position: absolute;
+  top: 400px;
+  left: 840px;
+  
+}
+#wireframe6{
+    position: absolute;
+  top: 400px;
+  left: 430px;
+  
+}
+
+.wffootprints{
+  position: absolute;
+  top: 500px;
+  left: 1200px;
+  width: 300px;
+}
+
+.bloodsplatter{
+    position: absolute;
+  top: 15px;
+  left: 1100px;
+  width: 400px;
+}
+
+.bloodsplatter1{
+    position: absolute;
+  top: 100px;
+  left: 1000px;
+  width: 400px;
+  animation: flashy 10s infinite alternate;
+}
+
+.bloodsplatter2{
+    position: absolute;
+  top: 100px;
+  left: 30px;
+  width: 400px;
+  animation: flashy 10s infinite alternate;
+}
+
+#return{
+  position: absolute;
+  top: 700px;
+  left: 100px;
+font: 30px Bradley Hand, cursive;
+color: darkred;
+text-align: center;
+
+}
+
+.sitemap2 {
+    position: fixed; 
+top: 30%;
+left: 12%;
+width: 1200px;
+
+}
+
+#text2{
+  font: 30px Bradley Hand, cursive;
+color: darkred;
+text-align: center;
+  position: fixed; 
+  top: 35%;
+  left: 10%;
+}
+
+#redirect{
+  text-align: center;
+    position: fixed; 
+  top: 15%;
+  left: 5%;
+
+}

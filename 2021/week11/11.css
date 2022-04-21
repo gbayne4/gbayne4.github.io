@@ -1,0 +1,234 @@
+/* styling help for button: https://www.w3schools.com/css/css3_buttons.asp
+	 */
+
+body{
+	font-family: Futura, sans-serif;
+	padding: 0;
+	margin: 0;
+}
+
+p{
+	font-size: 12px;
+	text-align: center;
+}
+h1{
+	margin: 0;
+	padding-top: 20px;
+	text-align: center;
+}
+
+#b1{
+	background-color: rgb(153, 199, 239);
+	height: 550px;
+}
+
+#b2{
+	background-color: rgb(100, 188, 93);
+	height: 500px;	
+}
+
+.seedPacks{
+	font-family: Futura Medium Italic, Futura, sans-serif;
+	height: 90px;
+	width: 70px;
+	display: inline-flex;
+	justify-content: center;
+	margin: 3px;
+
+	transition-duration: 1s;
+
+	border: none;
+	border-radius: 5px;
+	background-color: rgb(233, 237, 230);
+}
+
+#watercanButton{
+	font-family: Futura Medium Italic, Futura, sans-serif;
+	z-index: 5;
+	position: absolute;
+	top: 620px;
+	left: 425px;
+	display: inline-flex;
+	order: front;
+	justify-content: center;
+	margin: 3px;
+	transition-duration: 1s;
+	border: none;
+	border-radius: 5px;
+	background-color: rgb(233, 237, 230);
+}
+
+.wateringcan{
+	background-image: url(images/watercanstill.png);
+	width: 230px;
+	z-index: 1;
+	height:  auto;
+	position: absolute;
+	top: 520px;
+	left: 330px;
+}
+
+.movingCan{
+	width: 230px;
+	height:  auto;
+	position: absolute;
+	left: 50px;
+	top: 300px;
+	z-index: 30;
+	animation: left-to-right2 10s ease-in forwards infinite alternate ;
+	display: none;
+}
+
+
+
+#button{
+	margin-left: 30px;
+	padding-top: 20px;
+
+}
+
+.seedPacks:hover{
+	background-color: black;
+	color: white;
+	z-index: -1;
+}
+
+#sunflowerIcon{
+	width: 70px;
+	height: auto;
+
+	position: absolute;
+	top: 590px;
+	left: 32px;
+}
+
+#magnoliaIcon{
+	width: 70px;
+	height: auto;
+
+	position: absolute;
+	top: 590px;
+	left: 113px;
+
+}
+
+#roseIcon{
+	width: 70px;
+	height: auto;
+
+	position: absolute;
+	top: 588px;
+	left: 195px;
+
+}
+
+#tulipIcon{
+	width: 70px;
+	height: auto;
+
+	position: absolute;
+	top: 590px;
+	left: 275px;
+
+}
+
+.flowers{
+	width: 50px;
+	height: auto;
+	z-index: 999;
+
+}
+
+#sun{
+	width:  150px;
+	height: auto;
+	position: absolute;
+	top: 50px;
+	left: 1100px;
+	z-index: 1;
+
+}
+
+#cloud1{
+	width:  150px;
+	height: auto;
+	position: absolute;
+	top: 50px;
+	left: -150px;
+	z-index: 2;
+}
+
+#cloud2{
+	width:  150px;
+	height: auto;
+	position: absolute;
+	top: 140px;
+	left: -150px;
+	z-index: 2;
+}
+
+#cloud3{
+	width:  150px;
+	height: auto;
+	position: absolute;
+	top: 370px;
+	left: -150px;
+	z-index: 2;
+}
+
+#cloud4{
+	width:  150px;
+	height: auto;
+	position: absolute;
+	top: 230px;
+	left: -150px;
+	z-index: 2;
+}
+
+#cloud5{
+	width:  150px;
+	height: auto;
+	position: absolute;
+	top: 260px;
+	left: -150px;
+	z-index: 2;
+}
+
+.cloudsMove{
+	animation: left-to-right 40s ease-in forwards infinite alternate;
+}
+.cloudsMove2{
+	animation: left-to-right 40s ease-in forwards infinite alternate 20s;
+}
+.cloudsMove3{
+	animation: left-to-right 40s ease-in forwards infinite alternate 30s;
+}
+.cloudsMove4{
+	animation: left-to-right 40s ease-in forwards infinite alternate 10s;
+}
+
+.cloudsMove5{
+	animation: left-to-right 40s ease-in forwards infinite alternate 40s;
+}
+
+@keyframes left-to-right{
+	0%{
+		tranform:  translateX(+.05em);
+	}
+
+	100%{
+		left: 1500px;
+	}
+}
+
+@keyframes left-to-right2{
+	0%{
+		tranform:  translateX(+.05em);
+	}
+
+	100%{
+		left: 1200px;
+	}
+}
+
+
