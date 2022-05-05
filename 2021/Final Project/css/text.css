@@ -1,0 +1,104 @@
+.creepyWords{
+
+animation: flashy 10s forwards;
+text-shadow: 0 0 50px darkred;
+color: darkred;
+font: 200px Trattatello, fantasy;
+z-index: 100;
+
+}
+
+.creepyWords2{
+
+animation: flashy 10s infinite alternate 10s;
+text-shadow: 0 0 50px darkred;
+color: darkred;
+font: 130px Trattatello, fantasy;
+opacity: 0;
+text-align: center;
+}
+
+#mid{
+  position: fixed; 
+top: -10%;
+left: 10%;
+}
+#mid2{
+  position: fixed; 
+top: 0%;
+left: 0%;
+}
+
+
+@keyframes flashy {
+  0% {
+    opacity:0;
+  }
+  20% {
+    opacity:1;
+  }
+  21%{
+    opacity: 0;
+  }
+  22%{
+    opacity: 1;
+  }
+  23%{
+    opacity: 0;
+  }
+  24%{
+    opacity: 1;
+  }
+  25%{
+    opacity: 0;
+  }
+  26%{
+    opacity: 1;
+  }
+  70% {
+    opacity:1;
+  }
+  70.5%{
+    opacity: 0;
+  }
+  71%{
+    opacity: 1;
+  }
+  71.5%{
+    opacity: 0;
+  }
+  72%{
+    opacity: 1;
+  }
+  73.5%{
+    opacity: 0;
+  }
+  74%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+
+}
+
+
+#return{
+  position: absolute;
+  top: 630px;
+  left: 590px;
+font: 70px Bradley Hand, cursive;
+color: darkred;
+text-align: center;
+
+}
+#next{
+  position: absolute;
+  top: 750px;
+  left: 590px;
+font: 70px Bradley Hand, cursive;
+color: darkred;
+text-align: center;
+visibility: hidden;
+
+}

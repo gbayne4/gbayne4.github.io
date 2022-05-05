@@ -1,0 +1,51 @@
+
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+
+<link rel = "stylesheet" href="css/finalproject.css">
+<link rel = "stylesheet" href="css/text.css">
+ <script src="libraries/p5.js"></script>
+<script src="finalproject.js" defer></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+    background-image: url('backgrounds/bedroom.jpg');
+    background-size: cover;
+    height: 100vh;
+    padding:0;
+    margin:0;
+}
+</style>
+
+<!-- need help autoplay -->
+
+<audio controls allow = "autoplay"> 
+  <source src="sound/phonering.wav" type="audio/wav">
+</audio>
+
+<a href="scene2.html"> 
+<h2 class="choicesText" id = "choice1">Answer the phone</h2>
+ </a> 
+
+<a href="youFailed.html">
+<h2 class="choicesText" id = "choice2"> Don't pick up </h2>
+</a>
+
+<!-- isnt working idk i might actually hate javascript cause like why is it a little bitch  -->
+
+<h2 id="response"> Sir Detective Sir, your services are needed immediatly. A super mega rich guy was murdered. Please come to xxxx immediatly </h2>
+<a href="scene2.html">
+<h2 id="return"> Next</h2>
+</a>
+
+<img class = "choicebar" src= "images/blink.jpg">
+<img class = "blink" src= "images/blink.jpg">
+<img class = "bed" src= "images/bedScene.png">
+<img class = "dresser" src= "images/dresser.png">
+<img class = "phone" src= "images/phone.png">
+
+</body>
+</html>
