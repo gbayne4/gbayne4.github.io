@@ -1,7 +1,7 @@
 let font, placement = 700;
 let line0 = true , line1 = true,line2 = false,line3 = false,line4= false,line5= false,line6= false,line7= false, line8= false, line9 = false,line10 = false;
 let line11= false, line12= false, line13= false, line14 = false, line15 = false, line16= false, line17= false, line18 = false, line19 = false, line20= false;
-let count = 0;
+let count = 0, count2 =0;
 let choice1 = false, choice2 = false, choice3 = false, choice4 = false, choice5 = false, choice6 = false, choice7 = false, choice8 = false;
 
 
@@ -82,15 +82,16 @@ function setup() {
 
 function draw() {
 	loadPixels();
-	tiles.loadPixels();
-	table.loadPixels();
-	chair.loadPixels();
-	tableflower.loadPixels();
-	leaves.loadPixels();
-	
-	if (keyIsPressed === true){
-		count += 1
+
+	if (count2 != 10){
+	count2 += 1
 	}
+
+	if (keyIsPressed === true && count2 >= 10){
+		count += 1
+		count2 = 0
+	}
+	
 	
 	if (line0 === true){
 	
@@ -408,12 +409,29 @@ function draw() {
 	fill(0)
 	rect(0,placement-100,windowWidth,windowHeight)
 		choice6 = false
+		choice10 = true
+		line20 =false
+		line21 = true
 	textAlign(CENTER);
   textFont(font, 30);
 	fill('#74C7E1')
-	text('"Mr. Body is what you call a seducer of men.', width / 2, placement);
-	text('He has Plum wrapped around his finger.', width / 2, placement +50);
-	text('Honestly, I might hate him, but I respect him"', width / 2, placement +100);
+	text('"Mr. Body is what you call a seducer of men.', width / 2, placement-50);
+	text('He has Plum wrapped around his finger.', width / 2, placement);
+	text('Honestly, I might hate him, but I respect him"', width / 2, placement +50);
+	count = 0	
+	}
+	if (line20 === true && count ===1 && choice10 === true){
+					//chat bar
+	fill(0)
+	rect(0,placement-100,windowWidth,windowHeight)
+		choice10 = false
+		line20 = false
+	textAlign(CENTER);
+  textFont(font, 30);
+	fill('#74C7E1')
+	text('"Ive had just enough of this conversation', width / 2, placement-50);
+	text('All I hear is "Mr. Body" "Mr. Body" these days.', width / 2, placement);
+	text('Please talk again when you have something more interesting to say"', width / 2, placement +50);
 	count = 0	
 	}
 
@@ -511,7 +529,7 @@ function draw() {
 
 function mousePressed(){
 	if (mouseX > 1000 && mouseY > 50 && mouseX < 1200 && mouseY < 395){
-		window.location.replace("index.html");
+		window.location.replace("home_screen.html");
 	}
 	if (mouseX > windowWidth-210 && mouseY > windowHeight-260 && mouseX < windowWidth && mouseY < windowHeight){
 		window.location.replace("lounge.html");

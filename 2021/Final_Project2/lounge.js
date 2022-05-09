@@ -64,7 +64,7 @@ function draw() {
 
 function mousePressed(){
 		if (mouseX > 1000 && mouseY > 155 && mouseX < 1200 && mouseY < 450){
-		window.location.replace("index.html");
+		window.location.replace("home_screen.html");
 	}
 	if (mouseX > windowWidth-210 && mouseY > windowHeight-260 && mouseX < windowWidth && mouseY < windowHeight){
 		window.location.replace("conservatory.html");

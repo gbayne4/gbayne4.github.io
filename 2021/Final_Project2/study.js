@@ -62,7 +62,7 @@ function draw() {
 
 function mousePressed(){
 	if (mouseX > 100 && mouseY > 155 && mouseX < 300 && mouseY < 445){
-		window.location.replace("index.html");
+		window.location.replace("home_screen.html");
 	}
 	if (mouseX > 0 && mouseY > windowHeight-210 && mouseX < 210 && mouseY < windowHeight){
 		window.location.replace("study.html");

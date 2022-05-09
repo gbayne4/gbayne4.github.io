@@ -2,7 +2,7 @@
 let font, placement = 700;
 let line0 = true , line1 = true,line2 = false,line3 = false,line4= false,line5= false,line6= false,line7= false, line8= false, line9 = false,line10 = false;
 let line11= false, line12= false, line13= false, line14 = false, line15 = false, line16= false, line17= false, line18 = false, line19 = false, line20= false;
-let count = 0;
+let count = 0, count2 = 0;
 let begin = true, choice1 = false, choice2 = false, choice3 = false, choice4 = false, choice5 = false, choice6 = false, choice7 = false, choice8 = false;
 
 
@@ -53,9 +53,13 @@ function setup() {
 
 function draw() {
 	loadPixels();
+	if (count2 != 10){
+	count2 += 1
+	}
 
-	if (keyIsPressed === true){
+	if (keyIsPressed === true && count2 >= 10){
 		count += 1
+		count2 = 0
 	}
 	
 	if (line0 === true && begin === true){
@@ -74,7 +78,7 @@ function draw() {
 		line2 = true;
 	textAlign(CENTER);
   textFont(font, 30);
-	fill(255)
+	fill(150)
 	text(' “Oh it’s you.”', width / 2, placement);
 	
 	}
@@ -88,7 +92,8 @@ function draw() {
 	textAlign(CENTER);
   textFont(font, 30);
 	fill(150)
-	text('“Sorry I can’t talk right now, I’m trying to get these drinks to Colonel Mustard.”', width / 2, placement);
+	text('“Sorry I can’t talk right now', width / 2, placement);
+	text('I’m trying to get these drinks to Colonel Mustard.”', width / 2, placement +50);
 	}
 
 	if (line3 === true && count == 3 && begin === true){
@@ -200,7 +205,7 @@ function draw() {
 		line2 = true;
 	textAlign(CENTER);
   textFont(font, 30);
-	fill(255)
+	fill(150)
 	text('“I had been fixing the young master (Mr. Body) some drinks.', width / 2, placement);
 	text('He likes to have whisky before he rests for the night.”', width / 2, placement+50);
 	
@@ -276,8 +281,8 @@ function draw() {
 	textAlign(CENTER);
   textFont(font, 30);
 		fill(150)
-	text('*sigh* Yes, he was.', width / 2, placement);
-	text('"He got drunk everyday, was always bringing home other women despite his wife being home.The poor woman"', width / 2, placement+50);
+	text('*sigh* "Yes, he was.He got drunk everyday. ', width / 2, placement);
+	text('Was always bringing home other women despite his wife being home.The poor woman"', width / 2, placement+50);
 	}
 
 	if (line4 === true && count == 4 && choice3 === true){
@@ -295,7 +300,7 @@ function draw() {
 
 
 
-	if (line8 === true && keyWentDown('2') && choice1 === true){
+	if (line3 === true && keyWentDown('2') && choice1 === true){
 					//chat bar
 	choice1 = true
 	fill(0)
@@ -356,22 +361,36 @@ function draw() {
 
 	textAlign(CENTER);
   	textFont(font, 30);
-	fill(255)
-	text('"Business I have no business knowing.', width / 2, placement);
-	text('"He and Professor Plum were working really hard on who knows what."', width / 2, placement - 50);
-	text('"From the sounds of it, it was quite difficult, anyway I must go now."', width / 2, placement - 100);
+	fill(150)
+	text('"Business I have no business knowing.', width / 2, placement-50);
+	text('"He and Professor Plum were working really hard on who knows what."', width / 2, placement);
+	text('"From the sounds of it, it was quite difficult...and loud..."', width / 2, placement + 50);
 	}
 	if (line5 === true && count == 5 && choice4 === true){
 			//chat bar
 	fill(0)
 	rect(0,placement-100,windowWidth,windowHeight)
-		line4 = false;
+	line4 = false;
+	line6 = true;
 
 	textAlign(CENTER);
   	textFont(font, 30);
 	fill(255)
-	text('"Yes, thank you for your time', width / 2, placement);
+	text('"...loud?"', width / 2, placement);
 	}
+	if (line6 === true && count == 6 && choice4 === true){
+			//chat bar
+	fill(0)
+	rect(0,placement-100,windowWidth,windowHeight)
+	line5 = false;
+	line6 = false;
+
+	textAlign(CENTER);
+  	textFont(font, 30);
+	fill(150)
+	text('"I cannot say anything more, I must get going now.', width / 2, placement);
+	}
+
 
 
 
@@ -385,7 +404,8 @@ function draw() {
 	textAlign(CENTER);
   textFont(font, 30);
 	fill(150)
-	text(' "I’ve been serving as a maid since before he was born, and served as his nanny when he was young."', width / 2, placement);
+	text(' "I’ve been serving as a maid since before he was born,', width / 2, placement);
+	text('and served as his nanny when he was young."', width / 2, placement+50);
 	
 	}
 
@@ -491,7 +511,7 @@ function draw() {
 		choice5 = true;
 	textAlign(CENTER);
   textFont(font, 30);
-		fill(150)
+		fill(255)
 	text('“Please tell me, this information could be crucial.', width / 2, placement);
 	count = 0	
 	}
@@ -503,7 +523,7 @@ function draw() {
 		line2 = true;
 	textAlign(CENTER);
   textFont(font, 30);
-	fill(255)
+	fill(150)
 	text(' "I swore not to speak on it. I cannot go against my masters wishes."', width / 2, placement);
 	
 	}
@@ -537,7 +557,7 @@ function draw() {
 		choice7 = true;
 	textAlign(CENTER);
   textFont(font, 30);
-		fill(150)
+		fill(255)
 	text('"You need to tell by order of the law."', width / 2, placement);
 	count = 0	
 	}
@@ -547,10 +567,12 @@ function draw() {
 	fill(0)
 	rect(0,placement-100,windowWidth,windowHeight)
 		line1 = false;
+		choice7 = false;
 	textAlign(CENTER);
   textFont(font, 30);
 	fill(150)
-	text('"What?? I don’t even have a lawyer with me. This conversation is over. I must deliver my drinks.', width / 2, placement);
+	text('"What?? I don’t even have a lawyer with me.', width / 2, placement);
+	text('This conversation is over. I must deliver my drinks.', width / 2, placement+50);
 	
 	}
 
@@ -566,7 +588,7 @@ function draw() {
 		choice8 = true;
 	textAlign(CENTER);
   textFont(font, 30);
-		fill(150)
+		fill(255)
 	text('“Please, if you don’t tell me, we may never discover who murdered your younge master.', width / 2, placement);
 	text('"Don’t you seak justice for you young master?"', width / 2, placement+50);
 	count = 0	
@@ -580,8 +602,8 @@ function draw() {
 		line2 = true;
 	textAlign(CENTER);
   textFont(font, 30);
-	fill(255)
-	text(' "I swore not to speak on it. I cannot go against my masters wishes."', width / 2, placement);
+	fill(150)
+	text(' "I swore not to speak on it. I cannot go against my masters wishes......"', width / 2, placement);
 	
 	}
 
@@ -591,12 +613,20 @@ function draw() {
 	rect(0,placement-100,windowWidth,windowHeight)
 		line2 = false;
 		line3 = true;
+		choice1 =false;
+		choice2 =false;
+		choice3 =false;
+		choice4 =false;
+		choice5 =false;
+		choice6 =false;
+		choice7 =false;
+
 	textAlign(CENTER);
   textFont(font, 30);
 	fill(150)
-	text('"The late duke had briefly brought home a child.', width / 2, placement);
-	text('"A girl, a bit younger than Mr. Body. She was likely late Mr. Body’s child, but he never fully admitted it."', width / 2, placement);
-	
+	text('"The late duke had briefly brought home a child.', width / 2, placement-50);
+	text('"A girl, a bit younger than Mr. Body.', width / 2, placement);
+	text('She was likely late Mr. Body’s child, but he never fully admitted it."', width / 2, placement+50);
 	}
 
 
@@ -609,8 +639,9 @@ function draw() {
 	textAlign(CENTER);
   textFont(font, 30);
 	fill(150)
-	text('"She lived here for about a year, but after Mrs. Body threatened divorced, the child was sent away."', width / 2, placement);
-	text('"I wont say nothing more, besides I did not serve the girl"', width / 2, placement);
+	text('"She lived here for about a year,"', width / 2, placement-50);
+	text('"but after Mrs. Body threatened divorced, the child was sent away."', width / 2, placement);
+	text('"I wont say nothing more, besides I did not serve the girl"', width / 2, placement+50);
 	
 	}
 
@@ -651,7 +682,7 @@ function draw() {
 
 function mousePressed(){
 	if (mouseX > 100 && mouseY > 155 && mouseX < 300 && mouseY < 445){
-		window.location.replace("index.html");
+		window.location.replace("home_screen.html");
 	}
 	if (mouseX > 0 && mouseY > windowHeight-210 && mouseX < 210 && mouseY < windowHeight){
 		window.location.replace("study.html");

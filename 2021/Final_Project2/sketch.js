@@ -1,4 +1,6 @@
 let x =100 ,y=100;
+let font, placement = 700;
+
 let board_check = true;
 function preload(){
 	board = loadImage('images/clueboard.png');
@@ -21,10 +23,20 @@ function draw() {
 		console.log('y = ' + mouseY)
 	}
 
-	textAlign(RIGHT);
+	stroke('#FF0606')
+	strokeWeight(3)
+	fill(255,50);
+
+	rect(1100,100,300,70)
+	rect(1100,250,300,70)
+
+	noStroke()
+	textAlign(CENTER);
   	textFont(font, 40);
 	fill('#FF0606')
-	let guess = text('The Answer', width - 150, 150);
+	text('Answer', 1250, 150);
+	text('Instructions', 1250, 300);
+
 }
 
 function mousePressed(){
@@ -74,7 +86,10 @@ function mousePressed(){
 		y-=100
 		window.location.replace("billard.html");
 }
-	if (mouseX >  1000 && mouseY > 135 && mouseX < 1300 & mouseY < 165 && board_check === true){
+	if (mouseX >  1100 && mouseY > 100 && mouseX < 1400 & mouseY < 170 && board_check === true){
 		window.location.replace("theanswer.html");
+	}
+	if (mouseX >  1100 && mouseY > 250 && mouseX < 1400 & mouseY < 320 && board_check === true){
+		window.location.replace("index.html");
 	}
 }

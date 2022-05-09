@@ -13,7 +13,7 @@
   </style>
   <script src="libraries/p5.js"></script>
   <script src="libraries/p5.play.js"></script>
-  <script src="sketch2.js"></script>
+  <script src="sketch.js"></script>
 
 </head>
 

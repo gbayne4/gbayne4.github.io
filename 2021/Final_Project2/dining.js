@@ -47,5 +47,5 @@ loadPixels()
 }
 function mousePressed(){
 	if (mouseX > 100 && mouseY > 90 && mouseX < 300 && mouseY < 435){
-		window.location.replace("index.html");
+		window.location.replace("home_screen.html");
 	}}

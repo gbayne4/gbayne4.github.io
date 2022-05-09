@@ -1,8 +1,8 @@
 let font, placement = 700;
 let line0 = true , line1 = true,line2 = false,line3 = false,line4= false,line5= false,line6= false,line7= false, line8= false, line9 = false,line10 = false;
 let line11= false, line12= false, line13= false, line14 = false, line15 = false, line16= false, line17= false, line18 = false, line19 = false, line20= false;
-let count = 0;
-let begin = true, choice1 = false, choice2 = false, choice3 = false, choice4 = false, choice5 = false, choice6 = false, choice7 = false, choice8 = false;
+let count = 0, count2 = 0;
+let begin = true, choice1 = false, choice2 = false, choice3 = false, choice4 = false, choice5 = false, choice6 = false, choice7 = false, choice8 = false, choice9 = false;
 
 
 function preload(){
@@ -50,6 +50,7 @@ function setup() {
 	image(piano,550,100,800,700);
 	image(green,100,100,700,900);
 
+	noStroke()	
 		//chat bar
 	fill(0)
 	rect(0,placement-100,windowWidth,windowHeight)
@@ -59,8 +60,13 @@ function draw() {
 	loadPixels();
 	noStroke()
 
-		if (keyIsPressed === true){
+	if (count2 != 10){
+	count2 += 1
+	}
+
+	if (keyIsPressed === true && count2 >= 10){
 		count += 1
+		count2 = 0
 	}
 	
 	if (line0 === true && begin === true){
@@ -68,7 +74,7 @@ function draw() {
 	textAlign(CENTER);
   textFont(font, 30);
 	fill('#7AA585')
-	text('Hi Detective', width / 2, placement);
+	text('"Hi Detective"', width / 2, placement);
 	}
 
 	if (line1 === true && count == 1 && begin === true){
@@ -131,7 +137,7 @@ fill('#7AA585')
 	textAlign(CENTER);
   textFont(font, 30);
 	fill('#7AA585')
-	text('As dectives do ', width / 2, placement);
+	text('"As dectives do"', width / 2, placement);
 	}
 
 	if (line6 === true && count == 6 && begin === true){
@@ -166,7 +172,7 @@ fill('#7AA585')
 
 	if (line8 === true && keyWentDown('1') && begin === true){
 					//chat bar
-	choice1 = true
+	begin = false
 	fill(0)
 	rect(0,placement-100,windowWidth,windowHeight)
 		line8 = false;
@@ -181,476 +187,640 @@ fill('#7AA585')
 		
 	}
 
-	if (line8 === true && keyWentDown('2') && begin === true){
+	if (line1 === true && count === 1 && choice1 == true){
 					//chat bar
-	choice1 = true
+	begin = false
 	fill(0)
 	rect(0,placement-100,windowWidth,windowHeight)
 		line8 = false;
-		line1 = true;
-		begin = false;
-		choice2 = true;
+		line1 = false;
+		line2 = true;
+		choice1 = true;
 	textAlign(CENTER);
   textFont(font, 30);
 fill('#7AA585')
-	text('We are business partners', width / 2, placement);
-	count = 0	
+	text('“I was in the library reading my Bible”', width / 2, placement);	
 	}
-	/*
 
-	if (line1 === true && count == 1 && choice1 === true){
-			//chat bar
+	if (line2 === true && count === 2 && choice1 == true){
+					//chat bar
+	begin = false
 	fill(0)
 	rect(0,placement-100,windowWidth,windowHeight)
 		line8 = false;
-		line2 = true;
+		line2 = false;
+		line3 = true;
+		choice1 = true;
 	textAlign(CENTER);
   textFont(font, 30);
-	fill(255)
-	text('“I had been fixing the young master (Mr. Body) some drinks.', width / 2, placement);
-	text('He likes to have whisky before he rests for the night.”', width / 2, placement+50);
-	
+fill('255')
+	text('“Did you see anyone enter or leave the study.”', width / 2, placement);
 	}
 
+		if (line3 === true && count === 3 && choice1 == true){
+					//chat bar
+	begin = false
+	fill(0)
+	rect(0,placement-100,windowWidth,windowHeight)
+		line3 = false;
+		line4 = true;
+		choice1 = true;
+	textAlign(CENTER);
+  textFont(font, 30);
+fill('#7AA585')
+	text('“No, I had not. I was too immersed in my bible studies.”', width / 2, placement);	
+	}
 
-	if (line2 === true && count == 2 && choice1 === true){
+	if (line4 === true && count == 4 && choice1 === true){
 			//chat bar
 	fill(0)
 	rect(0,placement-100,windowWidth,windowHeight)
-		line1 = false;
-		line3 = true;
+		line4 = false;
+		line5 = true;
 	textAlign(CENTER);
   textFont(font, 30);
 	fill(255)
-	text('1.“How long have you been business partners', width / 2, placement);
+	text('1.“So you did nothing else the rest of the night”', width / 2, placement);
 			
 	textAlign(CENTER);
   textFont(font, 30);
 	fill(255)
-	text('2.“Please tell me what happened next”', width / 2, placement + 50 );
+	text('2.“You didn’t hear anything unusual”', width / 2, placement + 50 );
 	}
 
-	if (line3 === true && keyWentDown('1') && choice1 === true){
+	if (line5 === true && keyWentDown('1') && choice1 === true){
 					//chat bar
-	choice1 = true
+	choice1 = false
 	fill(0)
 	rect(0,placement-100,windowWidth,windowHeight)
-		line2 = false;
 		line1 = true;
-		choice1 = false;
-		choice3 = true;
+		line5 = false
+		choice4 = true;
 	textAlign(CENTER);
-  textFont(font, 30);
-		fill(150)
-	text('“...excuse me?”', width / 2, placement);
+ 	 textFont(font, 30);
+	fill('#7AA585')
+	text('" No, nothing unusual ... Well, I did hear frequent entering and exiting rooms.', width / 2, placement);	
+	text('It probably came from the study."', width / 2, placement+50);	
 	count = 0
-		
 	}
 
-	if (line1 === true && count == 1 && choice3 === true){
-			//chat bar
-	fill(0)
-	rect(0,placement-100,windowWidth,windowHeight)
-		line3 = false;
-		line2 = true;
-	textAlign(CENTER);
-  textFont(font, 30);
-		fill(150)
-	text('“young master was nothing of the sort, trust me I know an alcoholic when I see one.', width / 2, placement);
-	text('In fact the young masters fath-...', width / 2, placement+50);
-	
-	}
 
-	if (line2 === true && count == 2 && choice3 === true){
-			//chat bar
+	if (line1 === true && count == 1 && choice4 === true){
 	fill(0)
 	rect(0,placement-100,windowWidth,windowHeight)
 		line1 = false;
-		line3 = true;
+		line2 = true;
 	textAlign(CENTER);
-  textFont(font, 30);
+ 	textFont(font, 30);
 	fill(255)
-	text('“The old lord was an alcoholic?"', width / 2, placement);
-	}
+	text(' “Did you hear who it was?”', width / 2, placement); }	
 
-	if (line3 === true && count == 3 && choice3 === true){
-			//chat bar
+	if (line2 === true && count == 2 && choice4 === true){
 	fill(0)
 	rect(0,placement-100,windowWidth,windowHeight)
 		line2 = false;
-		line4 = true;
-	textAlign(CENTER);
-  textFont(font, 30);
-		fill(150)
-	text('*sigh* Yes, he was.', width / 2, placement);
-	text('"He got drunk everyday, was always bringing home other women despite his wife being home.The poor woman"', width / 2, placement+50);
-	}
-
-	if (line4 === true && count == 4 && choice3 === true){
-			//chat bar
-	fill(0)
-	rect(0,placement-100,windowWidth,windowHeight)
-		line3 = false;
-		choice3 = false
-	textAlign(CENTER);
-  textFont(font, 30);
-	fill(150)
-	text('“So don’t go calling the young master an alcoholic.', width / 2, placement);
-	text(' I’ve had enough of this conversation. Please leave me be.”', width / 2, placement+50);
-	}
-
-
-
-	if (line8 === true && keyWentDown('2') && choice1 === true){
-					//chat bar
-	choice1 = true
-	fill(0)
-	rect(0,placement-100,windowWidth,windowHeight)
-		line7 = false;
-		line1 = true;
-		choice1 = false;
-		choice4 = true;
-	textAlign(CENTER);
-  textFont(font, 30);
-	fill(150)
-	text('“I then went to the lounge but he wasn’t there.”', width / 2, placement);
-	count = 0	
-	}
-	if (line1 === true && count == 1 && choice4 === true){
-			//chat bar
-	fill(0)
-	rect(0,placement-100,windowWidth,windowHeight)
-		line8 = false;
-		line2 = true;
-	textAlign(CENTER);
-  textFont(font, 30);
-	fill(255)
-	text('“Is he usually in the lounge at that time?”', width / 2, placement);
-	
-	}
-
-	if (line2 === true && count == 2 && choice4 === true){
-			//chat bar
-	fill(0)
-	rect(0,placement-100,windowWidth,windowHeight)
-		line8 = false;
 		line3 = true;
 	textAlign(CENTER);
-  	textFont(font, 30);
-	fill(150)
-	text('“Yes…he always stays up late in the night in the lounge.”', width / 2, placement);
-	}
+ 	textFont(font, 30);
+	fill('#7AA585')
+	text('“Since it was Mr. Bodys study one could assume it was at least him, however...”', width / 2, placement); }	
 
 	if (line3 === true && count == 3 && choice4 === true){
-			//chat bar
 	fill(0)
 	rect(0,placement-100,windowWidth,windowHeight)
 		line3 = false;
 		line4 = true;
 	textAlign(CENTER);
-  	textFont(font, 30);
-	fill(255)
-	text('"What does he do in there?"', width / 2, placement);
-	}
+ 	textFont(font, 30);
+	fill('#7AA585')
+	text('“The last voice I remember hearing was a woman’s voice,', width / 2, placement);	
+	text('but I did not pay attention to what was being said.”', width / 2, placement+50);	}
 
 	if (line4 === true && count == 4 && choice4 === true){
 			//chat bar
 	fill(0)
 	rect(0,placement-100,windowWidth,windowHeight)
-		line3 = false;
-		line5 = true;
-
-	textAlign(CENTER);
-  	textFont(font, 30);
-	fill(255)
-	text('"Business I have no business knowing.', width / 2, placement);
-	text('"He and Professor Plum were working really hard on who knows what."', width / 2, placement - 50);
-	text('"From the sounds of it, it was quite difficult, anyway I must go now."', width / 2, placement - 100);
-	}
-	if (line5 === true && count == 5 && choice4 === true){
-			//chat bar
-	fill(0)
-	rect(0,placement-100,windowWidth,windowHeight)
 		line4 = false;
-
-	textAlign(CENTER);
-  	textFont(font, 30);
-	fill(255)
-	text('"Yes, thank you for your time', width / 2, placement);
-	}
-
-
-
-	//relationship with Mr. Body
-	if (line1 === true && count == 1 && choice2 === true){
-			//chat bar
-	fill(0)
-	rect(0,placement-100,windowWidth,windowHeight)
-		line8 = false;
-		line2 = true;
+		line5 = true;
 	textAlign(CENTER);
   textFont(font, 30);
-	fill(150)
-	text(' "I’ve been serving as a maid since before he was born, and served as his nanny when he was young."', width / 2, placement);
-	
+	fill(255)
+	text('1. Kiss up for more information', width / 2, placement);
+			
+	textAlign(CENTER);
+  textFont(font, 30);
+	fill(255)
+	text('2. Ask why you should believe him', width / 2, placement + 50 );
 	}
 
-	if (line2 === true && count == 2 && choice2 === true){
-			//chat bar
+	if (line5 === true && keyWentDown('1') && choice4 === true){
+	choice4 = false
+	fill(0)
+	rect(0,placement-100,windowWidth,windowHeight)
+		line1 = true;
+		line5 = false
+		choice9 = true;
+	textAlign(CENTER);
+ 	textFont(font, 30);
+	fill(255)
+	text('"Mr. Green, you’re such a good god-loving fellow,', width / 2, placement);	
+	text('don’t you have more information”', width / 2, placement+50);
+	count = 0
+	}
+
+	if (line1 === true && count == 1 && choice9 === true){
 	fill(0)
 	rect(0,placement-100,windowWidth,windowHeight)
 		line1 = false;
-		line3 = true;
+		line2 = true;
 	textAlign(CENTER);
-  	textFont(font, 30);
-	fill(255)
-	text(' How was he when he was young?', width / 2, placement);
-	}
+ 	textFont(font, 30);
+	fill('#7AA585')
+	text('“Ah...I would like to mention one thing.”', width / 2, placement); }
 
-
-	if (line3 === true && count == 3 && choice2 === true){
-			//chat bar
+	if (line2 === true && count == 2 && choice9 === true){
 	fill(0)
 	rect(0,placement-100,windowWidth,windowHeight)
 		line2 = false;
-		line4 = true;
+		line3 = true;
 	textAlign(CENTER);
-  	textFont(font, 30);
-	fill(150)
-	text('"He was a very curious child. Very kind as well."', width / 2, placement);
-	}
-	if (line4 === true && count == 4 && choice2 === true){
-			//chat bar
+ 	textFont(font, 30);
+	fill('#7AA585')
+	text(' “That woman, Ms. Scarlet, I don’t trust her.”', width / 2, placement); }
+
+	if (line3 === true && count == 3 && choice9 === true){
 	fill(0)
 	rect(0,placement-100,windowWidth,windowHeight)
 		line3 = false;
+		line4 = true;
+	textAlign(CENTER);
+ 	textFont(font, 30);
+	fill(255)
+	text(' “...Could you elaborate"', width / 2, placement); }
+
+	if (line2 === true && count == 2 && choice9 === true){
+	fill(0)
+	rect(0,placement-100,windowWidth,windowHeight)
+		line2 = false;
+		line3 = true;
+	textAlign(CENTER);
+ 	textFont(font, 30);
+	fill('#7AA585')
+	text(' “Only Mr. Body knew her when she entered our group.”', width / 2, placement-50); 
+	text(' “She is a “rising star” but she’s never gotten anywhere.”', width / 2, placement);
+	text(' “I’m not sure why Mr. Body lets her hang out with us upper-class folk.”', width / 2, placement+50);
+}
+	if (line3 === true && count == 3 && choice9 === true){
+	fill(0)
+	rect(0,placement-100,windowWidth,windowHeight)
+		line3 = false;
+		line4 = true;
+	textAlign(CENTER);
+ 	textFont(font, 30);
+	fill('#7AA585')
+	text(' “But her status isnt why I dont trust her”', width / 2, placement-50); 
+	text(' ... Im a living in the name of God.', width / 2, placement);
+	text(' “Loving all, or whatever...”', width / 2, placement+50);
+}
+	if (line4 === true && count == 4 && choice9 === true){
+	fill(0)
+	rect(0,placement-100,windowWidth,windowHeight)
+		line4 = false;
 		line5 = true;
 	textAlign(CENTER);
-  	textFont(font, 30);
+ 	textFont(font, 30);
+	fill('#7AA585')
+	text(' "Its her eyes...”', width / 2, placement); 
+}
+	if (line5 === true && count == 5 && choice9 === true){
+	fill(0)
+	rect(0,placement-100,windowWidth,windowHeight)
+		line5 = false;
+		line6 = true;
+	textAlign(CENTER);
+ 	textFont(font, 30);
+	fill('#7AA585')
+	text(' “Shes always observing Mr.Body...', width / 2, placement-50); 
+	text(' I thought she was attracted to him at first', width / 2, placement);
+	text(' but...”', width / 2, placement+50);
+}
+	if (line6 === true && count == 6 && choice9 === true){
+	fill(0)
+	rect(0,placement-100,windowWidth,windowHeight)
+		line6 = false;
+		line7 = true;
+	textAlign(CENTER);
+ 	textFont(font, 30);
+	fill('#7AA585')
+	text(' “It looked more like anger and jealousy', width / 2, placement-50); 
+	text('I once asked Mr. Body if she was blackmailing him but,', width / 2, placement);
+	text('he would only say he owed her this much.”', width / 2, placement+50);
+}
+	if (line7 === true && count == 7 && choice9 === true){
+	fill(0)
+	rect(0,placement-100,windowWidth,windowHeight)
+		choice9 = false;
+		line7 = false;
+	textAlign(CENTER);
+ 	textFont(font, 30);
 	fill(255)
-	text('“How was his relationship with his family?”', width / 2, placement);
+	text('“Thank you for your time,', width / 2, placement); 
+	text('this information was very useful”', width / 2, placement+50);
+}
+
+
+
+
+
+
+
+	if (line5 === true && keyWentDown('2') && choice4 === true){
+	choice4 = false
+	fill(0)
+	rect(0,placement-100,windowWidth,windowHeight)
+		line1 = true;
+		line5 = false
+		choice8 = true;
+	textAlign(CENTER);
+ 	textFont(font, 30);
+	fill(255)
+	text('"And why should I believe what you’ve told me?"', width / 2, placement);	
+	count = 0
 	}
-		if (line5 === true && count == 5 && choice2 === true){
+	if (line1 === true && count == 1 && choice8 === true){
+	fill(0)
+	rect(0,placement-100,windowWidth,windowHeight)
+		line1 = false;
+		line2 = true;
+	textAlign(CENTER);
+ 	textFont(font, 30);
+	fill('#7AA585')
+	text('“I have no reason to lie as I am innocent.”', width / 2, placement); }
+
+	if (line2 === true && count == 2 && choice8 === true){
+	fill(0)
+	rect(0,placement-100,windowWidth,windowHeight)
+		line2 = false;
+		line3 = true;
+	textAlign(CENTER);
+ 	textFont(font, 30);
+	fill('#7AA585')
+	text(' “...I swear to God.”', width / 2, placement); }
+
+	if (line3 === true && count == 3 && choice8 === true){
+	fill(0)
+	rect(0,placement-100,windowWidth,windowHeight)
+		line3 = false;
+		choice8 = false
+	textAlign(CENTER);
+ 	textFont(font, 30);
+	fill('#7AA585')
+	text('“Alright, thank you for your time.”', width / 2, placement); }
+
+
+
+	if (line5 === true && keyWentDown('2') && choice1 === true){
+					//chat bar
+	choice1 = false
+	fill(0)
+	rect(0,placement-100,windowWidth,windowHeight)
+		line1 = true;
+		line5 = false
+		choice5 = true;
+	textAlign(CENTER);
+  textFont(font, 30);
+	fill('#7AA585')
+	text('"Well… I was later joined by Professor Plum.', width / 2, placement);	
+	text('He came in all giddy talking some nonsense.”', width / 2, placement+50);
+	count = 0
+	}
+
+	if (line1 === true && count == 1 && choice5 === true){
+	fill(0)
+	rect(0,placement-100,windowWidth,windowHeight)
+		line1 = false;
+		line2 = true;
+	textAlign(CENTER);
+ 	textFont(font, 30);
+	fill(255)
+	text('“Nonsense?”', width / 2, placement); }	
+
+	if (line2 === true && count == 2 && choice5 === true){
+	fill(0)
+	rect(0,placement-100,windowWidth,windowHeight)
+		line2 = false;
+		line3 = true;
+	textAlign(CENTER);
+ 	textFont(font, 30);
+	fill(255)
+	text('“What sort of nonsense?”', width / 2, placement);}
+
+	if (line3 === true && count == 3 && choice5 === true){
+	fill(0)
+	rect(0,placement-100,windowWidth,windowHeight)
+		line3 = false;
+		line4 = true;
+	textAlign(CENTER);
+ 	textFont(font, 30);
+	fill('#7AA585')
+	text('"Him and Professor Plum have an assumed relationship', width / 2, placement);	
+	text('thats outside of my field of beliefs."', width / 2, placement +50);	
+}
+
+	if (line4 === true && count == 4 && choice5 === true){
 			//chat bar
 	fill(0)
 	rect(0,placement-100,windowWidth,windowHeight)
 		line4 = false;
-		line6 = true;
+		line5 = true;
 	textAlign(CENTER);
-  	textFont(font, 30);
-	fill(150)
-	text('“His family relationship was good, aside from his fathers infidelity."', width / 2, placement);
+  textFont(font, 30);
+	fill(255)
+	text('1.“Care to elaborate?”', width / 2, placement);
+			
+	textAlign(CENTER);
+  textFont(font, 30);
+	fill(255)
+	text('2.“Do you think Plum could be the murderer?”', width / 2, placement + 50 );
 	}
 
-			if (line6 === true && count == 6 && choice2 === true){
+	if (line5 === true && keyWentDown('1') && choice5 === true){
+					//chat bar
+	choice5 = false
+	fill(0)
+	rect(0,placement-100,windowWidth,windowHeight)
+		line1 = true;
+		line4 = false
+		choice6 = true;
+	textAlign(CENTER);
+ 	textFont(font, 30);
+	fill('#7AA585')
+	text('...', width / 2, placement);	
+	count = 0
+	}
+		if (line1 === true && count == 1 && choice6 === true){
+	fill(0)
+	rect(0,placement-100,windowWidth,windowHeight)
+		line1 = false;
+		line2 = true;
+	textAlign(CENTER);
+ 	textFont(font, 30);
+	fill('#7AA585')
+	text('“We all knew they were romantically involved.”', width / 2, placement);}
+
+		if (line2 === true && count == 2 && choice6 === true){
+	fill(0)
+	rect(0,placement-100,windowWidth,windowHeight)
+		line2 = false;
+		line3 = true;
+	textAlign(CENTER);
+ 	textFont(font, 30);
+	fill('#7AA585')
+	text('“It would take an idiot not to know-”', width / 2, placement);}
+
+		if (line3 === true && count == 3 && choice6 === true){
+	fill(0)
+	rect(0,placement-100,windowWidth,windowHeight)
+		line3 = false;
+		line4 = true;
+	textAlign(CENTER);
+ 	textFont(font, 30);
+	fill('#7AA585')
+	text('...', width / 2, placement);}
+
+		if (line4 === true && count == 4 && choice6 === true){
+	fill(0)
+	rect(0,placement-100,windowWidth,windowHeight)
+		line4 = false;
+		line5 = true;
+	textAlign(CENTER);
+ 	textFont(font, 30);
+	fill('#7AA585')
+	text('“Actually...', width / 2, placement);}
+
+
+		if (line5 === true && count == 5 && choice6 === true){
+	fill(0)
+	rect(0,placement-100,windowWidth,windowHeight)
+		line5 = false;
+		line6 = true;
+	textAlign(CENTER);
+ 	textFont(font, 30);
+	fill('#7AA585')
+	text('“Colonel Mustard may not know.”', width / 2, placement);}
+
+		if (line6 === true && count == 6 && choice6 === true){
+	fill(0)
+	rect(0,placement-100,windowWidth,windowHeight)
+		line6 = false;
+		choice6 = false;
+	textAlign(CENTER);
+ 	textFont(font, 30);
+	fill('#7AA585')
+	text(' “Yeah so it would take an idiot not to know.”', width / 2, placement);}
+
+
+
+
+
+
+
+
+	if (line5 === true && keyWentDown('2') && choice5 === true){
+					//chat bar
+	choice5 = false
+	fill(0)
+	rect(0,placement-100,windowWidth,windowHeight)
+		line1 = true;
+		line4 = false
+		choice7 = true;
+	textAlign(CENTER);
+ 	textFont(font, 30);
+	fill('#7AA585')
+	text('...', width / 2, placement);	
+	text('“Personally, I’d be shocked.”', width / 2, placement+50);		
+	count = 0
+	}
+		if (line1 === true && count == 1 && choice7 === true){
+	fill(0)
+	rect(0,placement-100,windowWidth,windowHeight)
+		line1 = false;
+		line2 = true;
+	textAlign(CENTER);
+ 	textFont(font, 30);
+	fill('#7AA585')
+	text('“While as a devout Christian, it is difficult to understand their relationship,', width / 2, placement);	
+	text(' they did seem to care deeply for one another.”', width / 2, placement +50);	
+}
+		if (line2 === true && count == 2 && choice7 === true){
+	fill(0)
+	rect(0,placement-100,windowWidth,windowHeight)
+		line2 = false;
+		choice7 = false;
+	textAlign(CENTER);
+ 	textFont(font, 30);
+	fill(255)
+	text(' “Alright thank you for your time.”', width / 2, placement);
+}
+
+
+
+
+
+
+
+
+
+
+	if (line8 === true && keyWentDown('2') && begin === true){
+					//chat bar
+	begin = false
+	fill(0)
+	rect(0,placement-100,windowWidth,windowHeight)
+		line1 = true;
+		line8 = false
+		choice2 = true;
+	textAlign(CENTER);
+ 	textFont(font, 30);
+	fill('#7AA585')
+	text('"We are business partners"', width / 2, placement);	
+	count = 0
+	}
+		if (line1 === true && count == 1 && choice2 === true){
+	fill(0)
+	rect(0,placement-100,windowWidth,windowHeight)
+		line1 = false;
+		line2 = true;
+		choice2 = true;
+	textAlign(CENTER);
+ 	textFont(font, 30);
+	fill(255)
+	text('“What sort of business?”', width / 2, placement);	
+	}
+		if (line2 === true && count == 2 && choice2 === true){
+	fill(0)
+	rect(0,placement-100,windowWidth,windowHeight)
+		line2 = false;
+		line3 = true;
+		choice2 = true;
+	textAlign(CENTER);
+ 	textFont(font, 30);
+	fill('#7AA585')
+	text('“Investments…why is this important.”', width / 2, placement);	
+	}
+		if (line3 === true && count == 3 && choice2 === true){
+	fill(0)
+	rect(0,placement-100,windowWidth,windowHeight)
+		line3 = false;
+		line4 = true;
+		choice2 = true;
+	textAlign(CENTER);
+ 	textFont(font, 30);
+	fill(255)
+	text('“Anything related to Mr. Body is important.', width / 2, placement);
+	text('Did you two have a good relationship outside of business?”', width / 2, placement+50);	
+	}
+		if (line4 === true && count == 4 && choice2 === true){
+	fill(0)
+	rect(0,placement-100,windowWidth,windowHeight)
+		line4 = false;
+		line5 = true;
+		choice2 = true;
+	textAlign(CENTER);
+ 	textFont(font, 30);
+	fill('#7AA585')
+	text(' “Yes, we were friends.”', width / 2, placement);	
+	}
+
+		if (line5 === true && count == 4 && choice2 === true){
 			//chat bar
 	fill(0)
 	rect(0,placement-100,windowWidth,windowHeight)
 		line5 = false;
-		line7 = true;
+		line6 = true;
 	textAlign(CENTER);
-  	textFont(font, 30);
+  textFont(font, 30);
 	fill(255)
-	text('“The family dynamic was good, despite this?"', width / 2, placement);
+	text('1.“Have you gotten in any arguments with him recently.”', width / 2, placement);
+			
+	textAlign(CENTER);
+  textFont(font, 30);
+	fill(255)
+	text('2.“Tell me more about your investments.”', width / 2, placement + 50 );
 	}
 
-		if (line7 === true && count == 7 && choice2 === true){
-			//chat bar
+		if (line6 === true && keyWentDown('1') && choice2 === true){
+	choice2 = false
 	fill(0)
 	rect(0,placement-100,windowWidth,windowHeight)
 		line6 = false;
-		line8 = true;
-	textAlign(CENTER);
-  	textFont(font, 30);
-	fill(150)
-	text('“They did nearly get a divorce. But whats in the past is the past"', width / 2, placement);
-	}
-
-	if (line8 === true && count == 7 && choice2 === true){
-			//chat bar
-	fill(0)
-	rect(0,placement-100,windowWidth,windowHeight)
-		line7 = false;
-		line9 = true;
-	textAlign(CENTER);
-  textFont(font, 30);
-
-  	text('Mrs. White clearly looks uncomfortable', width / 2, placement - 50);
-	fill(255)
-
-	text('1.Pry', width / 2, placement);
-			
-	textAlign(CENTER);
-  textFont(font, 30);
-	text('2.Let it go', width / 2, placement + 50 );
-	}
-	
-
-	if (line9 === true && keyWentDown('1') && choice2 === true){
-					//chat bar
-	choice5 = true
-	fill(0)
-	rect(0,placement-100,windowWidth,windowHeight)
-		line9 = false;
 		line1 = true;
-		choice2 = false;
-		choice5 = true;
+		choice3 = true;
 	textAlign(CENTER);
-  textFont(font, 30);
-		fill(150)
-	text('“Please tell me, this information could be crucial.', width / 2, placement);
-	count = 0	
+	textFont(font, 30);
+	fill('#7AA585')
+	text('“Ah, we briefly had a fight, but that was a while back.”', width / 2, placement);	
+	count = 0
 	}
 
-		if (line1 === true && count == 1 && choice5 === true){
-			//chat bar
-	fill(0)
-	rect(0,placement-100,windowWidth,windowHeight)
-		line2 = true;
-	textAlign(CENTER);
-  textFont(font, 30);
-	fill(255)
-	text(' "I swore not to speak on it. I cannot go against my masters wishes."', width / 2, placement);
-	
-	}
-	if (line2 === true && count == 2 && choice5 === true){
-			//chat bar
-	fill(0)
-	rect(0,placement-100,windowWidth,windowHeight)
-		line1 = false;
-		line3 = true;
-	textAlign(CENTER);
-  textFont(font, 30);
-
-	fill(255)
-
-	text('1.Threaten her', width / 2, placement);
-			
-	textAlign(CENTER);
-  textFont(font, 30);
-	text('2.Appease her ', width / 2, placement + 50 );
-	}
-
-
-	if (line3 === true && keyWentDown('1') && choice5 === true){
-					//chat bar
-	choice5 = true
-	fill(0)
-	rect(0,placement-100,windowWidth,windowHeight)
-		line3 = false;
-		line1 = true;
-		choice2 = false;
-		choice7 = true;
-	textAlign(CENTER);
-  textFont(font, 30);
-		fill(150)
-	text('"You need to tell by order of the law."', width / 2, placement);
-	count = 0	
-	}
-
-	if (line1 === true && count == 1 && choice7 === true){
-			//chat bar
-	fill(0)
-	rect(0,placement-100,windowWidth,windowHeight)
-		line1 = false;
-	textAlign(CENTER);
-  textFont(font, 30);
-	fill(150)
-	text('"What?? I don’t even have a lawyer with me. This conversation is over. I must deliver my drinks.', width / 2, placement);
-	
-	}
-
-
-	if (line3 === true && keyWentDown('2') && choice5 === true){
-					//chat bar
-	choice5 = true
-	fill(0)
-	rect(0,placement-100,windowWidth,windowHeight)
-		line3 = false;
-		line1 = true;
-		choice2 = false;
-		choice8 = true;
-	textAlign(CENTER);
-  textFont(font, 30);
-		fill(150)
-	text('“Please, if you don’t tell me, we may never discover who murdered your younge master.', width / 2, placement);
-	text('"Don’t you seak justice for you young master?"', width / 2, placement+50);
-	count = 0	
-	}
-
-	if (line1 === true && count == 1 && choice8 === true){
-			//chat bar
+		if (line1 === true && count == 1 && choice3 === true){
 	fill(0)
 	rect(0,placement-100,windowWidth,windowHeight)
 		line1 = false;
 		line2 = true;
 	textAlign(CENTER);
-  textFont(font, 30);
+ 	textFont(font, 30);
 	fill(255)
-	text(' "I swore not to speak on it. I cannot go against my masters wishes."', width / 2, placement);
-	
+	text(' “A fight over what?”', width / 2, placement);	
 	}
-
-		if (line2 === true && count == 2 && choice8 === true){
-			//chat bar
+		if (line2 === true && count == 2 && choice3 === true){
 	fill(0)
 	rect(0,placement-100,windowWidth,windowHeight)
 		line2 = false;
 		line3 = true;
 	textAlign(CENTER);
-  textFont(font, 30);
-	fill(150)
-	text('"The late duke had briefly brought home a child.', width / 2, placement);
-	text('"A girl, a bit younger than Mr. Body. She was likely late Mr. Body’s child, but he never fully admitted it."', width / 2, placement);
-	
+ 	textFont(font, 30);
+	fill('#7AA585')
+	text('“Just a business disagreement, nothing too nasty, and it all worked out in the end.”', width / 2, placement);	
 	}
 
-
-		if (line3 === true && count == 3 && choice8 === true){
-			//chat bar
+		if (line3 === true && count == 3 && choice3 === true){
 	fill(0)
 	rect(0,placement-100,windowWidth,windowHeight)
 		line3 = false;
 		line4 = true;
 	textAlign(CENTER);
-  textFont(font, 30);
-	fill(150)
-	text('"She lived here for about a year, but after Mrs. Body threatened divorced, the child was sent away."', width / 2, placement);
-	text('"I wont say nothing more, besides I did not serve the girl"', width / 2, placement);
-	
+ 	textFont(font, 30);
+	fill(255)
+	text('“Can you tell me any more."', width / 2, placement);	
 	}
-
-		if (line4 === true && count == 4 && choice8 === true){
-			//chat bar
+		if (line4 === true && count == 4 && choice3 === true){
 	fill(0)
 	rect(0,placement-100,windowWidth,windowHeight)
 		line4 = false;
+		choice3 = false
 	textAlign(CENTER);
-  textFont(font, 30);
-	fill(255)
-	text('"Thank you for your time, I appreciate your cooperation"', width / 2, placement);
-	
+ 	textFont(font, 30);
+	fill('#7AA585')
+	text('“Not without a lawyer. Please stop playing God, and leave me alone.', width / 2, placement);	
+	text('I need to go pray.”', width / 2, placement+50);	
 	}
-
-
-
-	if (line8 === true && keyWentDown('2') && choice2 === true){
-					//chat bar
-	choice6 = true
+	
+		if (line6 === true && keyWentDown('2') && choice2 === true){
+	choice2 = false
 	fill(0)
 	rect(0,placement-100,windowWidth,windowHeight)
-		line8 = false;
-		choice2 = false;
+		line6 = false;
 	textAlign(CENTER);
-  textFont(font, 30);
-		fill(255)
-	text('"Thank you for your time, I appreciate your cooperation"', width / 2, placement);
-	count = 0	
+	textFont(font, 30);
+	fill('#7AA585')
+	text('“Don’t pry into my business!!!', width / 2, placement);	
+	text('I don’t even have a lawyer around. I won’t tell you anything.”', width / 2, placement+50);	
 	}
-	*/
+	
 }
 
 function mousePressed(){
 	if (mouseX > 100 && mouseY > 155 && mouseX < 300 && mouseY < 445){
-		window.location.replace("index.html");
+		window.location.replace("home_screen.html");
 	}}
