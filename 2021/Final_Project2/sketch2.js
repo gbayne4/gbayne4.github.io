@@ -29,14 +29,15 @@ function draw() {
 	textAlign(CENTER);
  	textFont(font, 30);
 	fill(255)
-	text('Click a room to begin', width / 2, 300);
-	text('Search for the murder weapon (by clicking around the room)', width / 2, 350);
-	text('Speak to suspects using space bar and keys 1+2', width / 2, 400);
-	text('Leave rooms by clicking on the door', width / 2, 450);
-	text('When ready to the reveal, click the answer key and see if you correctly guessed the:', width / 2, 500);
-	text('Room,Weapon, and Murderer ', width / 2, 550);
-	text('Good luck!!', width / 2, 600);
-	text('Press the spacebar to begin', width / 2, 650);
+	text('Click a room to enter', width / 2, 300-20);
+	text('Search for the murder weapon (by clicking around the room)', width / 2, 350-20);
+	text('Speak to suspects using space bar and keys 1+2', width / 2, 400-20);
+	text('White Text = You, Color Text = Suspect', width / 2, 450-20);
+	text('Leave rooms by clicking on the door', width / 2, 500-20);
+	text('When ready to the reveal, click the answer key and see if you correctly guessed the:', width / 2, 550-20);
+	text('Room,Weapon, and Murderer ', width / 2, 600-20);
+	text('Good luck!!', width / 2, 650-20);
+	text('Press the spacebar to begin', width / 2, 700-20);
 	
 
 
