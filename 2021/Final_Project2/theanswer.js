@@ -63,12 +63,12 @@ function draw() {
 	textAlign(CENTER);
  	textFont(font, 20);
 	fill(255)
-	text('Scarlet was Mr. Bodys half brother.', width / 2, 600);
-	text('She always resented him since she got a happy life while she was a scorned illigimate child.', width / 2, 600+25);
+	text('Scarlet was Mr. Bodys half sister.', width / 2, 600);
+	text('She always resented him since he got a happy life while she was a scorned illigimate child.', width / 2, 600+25);
 	text('She was always waiting for a chance to strike.', width / 2, 600+50);
-	text('After finding out about Mr. Bodys and Mr. Plums relationship, she decided to frame him.', width / 2, 600+75);
-	text('Going into the lounge when Plum usually was there, she took Mr. Body through the underground tunnel,', width / 2, 600+100);
-	text('And murderered him in the kitchen after Ms. White left the kitchen, using a knife.', width / 2, 600+125);
+	text('After finding out about Mr. Bodys and Professor Plums relationship, she decided to frame Plum.', width / 2, 600+75);
+	text('Going into the lounge after Plum left, she took Mr. Body through the underground tunnel into the kitchen,', width / 2, 600+100);
+	text('She murderered him in the kitchen after Ms. White left, using a knife.', width / 2, 600+125);
 	}
 
 }
