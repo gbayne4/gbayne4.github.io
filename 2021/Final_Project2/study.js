@@ -65,5 +65,5 @@ function mousePressed(){
 		window.location.replace("home_screen.html");
 	}
 	if (mouseX > 0 && mouseY > windowHeight-210 && mouseX < 210 && mouseY < windowHeight){
-		window.location.replace("study.html");
+		window.location.replace("kitchen.html");
 	}}

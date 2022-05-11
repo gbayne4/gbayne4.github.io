@@ -34,7 +34,7 @@ function draw() {
 	text('Speak to suspects using space bar and keys 1+2', width / 2, 400-20);
 	text('White Text = You, Color Text = Suspect', width / 2, 450-20);
 	text('Leave rooms by clicking on the door', width / 2, 500-20);
-	text('When ready to the reveal, click the answer key and see if you correctly guessed the:', width / 2, 550-20);
+	text('When ready to reveal, click the answer key and see if you correctly guessed the:', width / 2, 550-20);
 	text('Room,Weapon, and Murderer ', width / 2, 600-20);
 	text('Good luck!!', width / 2, 650-20);
 	text('Press the spacebar to begin', width / 2, 700-20);
