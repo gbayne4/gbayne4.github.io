@@ -154,6 +154,7 @@ h1 {
   width: 50%;
   opacity:  .25;
   transition: opacity: 5s;
+  text-decoration: none;
  
 }
 
@@ -172,6 +173,7 @@ h2 {
   width: 50%;
   opacity:  .25;
   transition: opacity: 5s;
+  text-decoration: none;
  
 }
 
