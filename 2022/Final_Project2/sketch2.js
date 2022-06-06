@@ -25,7 +25,7 @@ function draw() {
   	textFont(font, 80);
 	fill('#FF0606')
 	text('Welcome to Clue:', width / 2, 100);
-	text('the Interactive narrative', width / 2, 200);
+	text('the Interactive Narrative', width / 2, 200);
 	textAlign(CENTER);
  	textFont(font, 30);
 	fill(255)
